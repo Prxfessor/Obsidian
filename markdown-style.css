@@ -1,0 +1,101 @@
+:root {
+  /* ==== headings colour ==== */
+  --headings-colour: #D7BA7D;
+
+  /* ==== maths ==== */
+  --maths-colour: #C79DFF;
+
+  /* font is 1.5 times the font size */
+  --maths-font-size: calc(var(--vscode-font-size) * 1.7);
+
+  /* ==== blockquote ==== */
+  /* background colour is slightly lighter than editor background */
+  --blockquote-background-colour: color-mix(in srgb, var(--vscode-editor-background) 98%, white 2%);
+  --blockquote-border-colour: var(--vscode-activityBarBadge-background);
+
+  /* ==== blockquote ==== */
+  --checkbox-colour: var(--vscode-button-background);
+
+
+  /* ==== ADDITIONAL ==== */
+  --code-inline-highlight-colour: #292B2B;
+  --code-inline-text-colour: #D7BA7D;
+}
+
+
+
+
+/* ====== HEADERS ====== */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--headings-colour) !important;
+  border-bottom: none !important;
+}
+
+
+/* ====== BLOCKQUOTE ====== */
+blockquote {
+  background-color: var(--blockquote-background-colour);
+  border-left: 4px solid var(--blockquote-border-colour);
+}
+
+
+/* ====== MATHS ====== */
+/* inline maths ($ ... $) */
+.katex {
+  color: var(--maths-colour) !important;
+  font-size: var(--maths-font-size);
+}
+
+/* Block math ($$ ... $$) */
+.katex-display {
+  color: var(--maths-colour) !important;
+}
+
+
+/* ====== CHECKBOX ====== */
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 1.1em;
+  height: 1.1em;
+  border: 2px solid var(--vscode-editor-foreground);
+  border-radius: 4px;
+  background-color: transparent;
+  cursor: pointer;
+  position: relative;
+  vertical-align: middle;
+}
+
+/* Checked state: uses the theme’s accent color */
+input[type="checkbox"]:checked {
+  background-color: var(--checkbox-colour);
+  border-color: var(--checkbox-colour);
+}
+
+/* Checkmark */
+input[type="checkbox"]:checked::after {
+  content: "";
+  position: absolute;
+  /* top: 0.4em; */
+  left: 0.2em;
+  width: 0.25em;
+  height: 0.5em;
+  border: solid white;
+  border-width: 0 0.15em 0.15em 0;
+  transform: rotate(45deg);
+}
+
+
+
+/* ==== tables ==== */
+/* table overflow */
+table {
+  display: block;
+  overflow-x: auto;
+  white-space: nowrap;
+}
